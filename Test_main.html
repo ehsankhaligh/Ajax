@@ -1,0 +1,41 @@
+<html>
+
+<head>
+     <script type="text/javascript">
+       
+       function test(){
+       	
+       	 var xmlhttp;
+                  
+         if(window.XMLHttpRequest){
+           
+            xmlhttp = new XMLHttpRequest;
+         
+         } else {
+            
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+         } 
+
+         xmlhttp.onreadystatechange = function() {
+             
+             if(xmlhttp.readyState == 4){
+                  
+                 document.getElementById('result').innerHTML = xmlhttp.responseText; 
+            } 
+         } //end function() 
+
+         xmlhttp.open("GET", "A.txt" , true);
+         xmlhttp.send();
+     }//end of function test()
+      
+      </script>
+</head>
+      <meta http-equiv=”refresh” content=”5" />
+<body>
+     
+    <input type="button" value = "click" onclick="test()" /><br />
+    
+    <div id="result"> </div>
+
+</body>
+</html>
